@@ -12,7 +12,7 @@ public class Client extends Thread {
     ObjectInputStream in;
     private Consumer<Serializable> callback;
     private int port;
-    Client(port, Consumer<Serializable> call){
+    Client(int port, Consumer<Serializable> call){
         this.port = port;
         callback = call;
     }

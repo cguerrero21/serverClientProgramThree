@@ -1,12 +1,17 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.io.Serializable;
+import java.util.function.Consumer;
 
 public class ClientGUI extends Application {
 
@@ -15,13 +20,23 @@ public class ClientGUI extends Application {
 
     public void start(Stage primaryStage) {
         BorderPane root = new BorderPane();
-        HBox topTab = new HBox();
+        VBox topTab = new VBox();
 
         Button startButton = new Button("Start Client");
-        startButton.setOnAction(e -> startClient());
+        startButton.setOnAction(e -> {
+            if (portTF.getText().isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Warning");
+                alert.setHeaderText(null);
+                alert.setContentText("Please enter port in textfield.");
+                alert.showAndWait();
+            }else {
+                startClient();
+                startButton.setDisable(true);
+            }
+        });
         topTab.getChildren().addAll(portTF, startButton);
-        root.setTop(topTab);
-        root.setCenter(messageLabel);
+        root.setCenter(topTab);
 
         root.setStyle("-fx-background-color: #EEE8AA");
         primaryStage.setScene(new Scene(root, 700, 500));
@@ -31,7 +46,8 @@ public class ClientGUI extends Application {
 
     private void startClient() {
         int port = Integer.parseInt(portTF.getText());
-        Client clientThread = new Client(port, messageLabel);
+        Consumer<Serializable> uiUpdater = message -> updateUI(message.toString());
+        Client clientThread = new Client(port, uiUpdater);
         clientThread.start();
     }
 
