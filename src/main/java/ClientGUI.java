@@ -10,6 +10,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 import java.io.Serializable;
@@ -20,12 +21,18 @@ public class ClientGUI extends Application {
     private Label messageLabel = new Label("Messages will appear here");
     private TextField portTF = new TextField();
     private Scene rules;
+    private Scene cats;
+    Button accept = new Button("Accept");
+    Button category1 = new Button("FOOD");
+    Button category2 = new Button("ANIMALS");
+    Button category3 = new Button("U.S. States");
     public void start(Stage primaryStage) {
         Label label = new Label("Please insert your port number");
         BorderPane root = new BorderPane();
         VBox topTab = new VBox();
 
         createRules();
+        createCategory();
 
         Button startButton = new Button("Start Client");
         startButton.setOnAction(e -> {
@@ -40,6 +47,9 @@ public class ClientGUI extends Application {
                 startButton.setDisable(true);
                 primaryStage.setScene(rules);
             }
+        });
+        accept.setOnAction(e -> {
+            primaryStage.setScene(cats);
         });
         topTab.getChildren().addAll(label, portTF, startButton);
         topTab.setAlignment(Pos.CENTER);
@@ -65,10 +75,41 @@ public class ClientGUI extends Application {
         launch(args);
     }
 
+    private void createCategory(){
+        BorderPane catRoot = new BorderPane();
+        catRoot.setStyle("-fx-background-color: #EEE8AA");
+
+        HBox buttonHolder = new HBox();
+        buttonHolder.setAlignment(Pos.CENTER);
+        Label buffer = new Label("");
+        Label catLab = new Label("CATEGORIES");
+        catLab.setFont(Font.font("Arial", FontWeight.BOLD, 30));
+
+        VBox buff = new VBox();
+        StackPane labelHold = new StackPane();
+        labelHold.getChildren().add(catLab);
+        labelHold.setAlignment(Pos.CENTER);
+        buff.getChildren().addAll(buffer,labelHold);
+
+        category1.setPrefSize(200, 350);
+        category2.setPrefSize(200, 350);
+        category3.setPrefSize(200, 350);
+        buttonHolder.getChildren().addAll(category1, category2, category3);
+
+        StackPane botText = new StackPane();
+        Label text = new Label("Please select a category");
+        botText.getChildren().add(text);
+        botText.setAlignment(Pos.CENTER);
+        text.setFont(Font.font("Arial", FontWeight.BOLD, 25));
+
+        catRoot.setTop(buff);
+        catRoot.setCenter(buttonHolder);
+        catRoot.setBottom(botText);
+        cats = new Scene(catRoot, 700, 500);
+    }
     private void createRules(){
         BorderPane rulesRoot = new BorderPane();
         VBox holder = new VBox();
-        Button accept = new Button("Accept");
         accept.setPrefSize(150, 50);
         Label header = new Label("RULES");
         header.setFont(new Font(40));
