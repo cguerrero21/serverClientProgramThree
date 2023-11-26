@@ -6,6 +6,8 @@ import java.net.Socket;
 import java.util.Stack;
 import java.util.function.Consumer;
 
+import javafx.application.Platform;
+
 public class Client extends Thread {
     Socket socketClient;
     ObjectOutputStream out;
@@ -25,6 +27,7 @@ public class Client extends Thread {
             socketClient.setTcpNoDelay(true);
         } catch(IOException e) {
             System.out.println("Server is not available. Shutting down client.");
+            Platform.exit();
             return;
         }
 
