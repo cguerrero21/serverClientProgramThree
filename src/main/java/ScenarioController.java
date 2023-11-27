@@ -50,7 +50,7 @@ public class ScenarioController {
             guessButtonClicked();
         });
     }
-    private void guessButtonClicked() {
+    private Void guessButtonClicked() {
         String guess = charGuess.getText().toUpperCase(); // Convert to uppercase for case-insensitivity
 
         if (guess.length() == 1 && Character.isLetter(guess.charAt(0))) {
