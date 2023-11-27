@@ -8,12 +8,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: EEE8AA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="ScenarioController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: EEE8AA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="CENTER" layoutX="44.0" layoutY="96.0" prefHeight="100.0" prefWidth="610.0">
+      <HBox fx:id="charBox" alignment="CENTER" layoutX="44.0" layoutY="96.0" prefHeight="100.0" prefWidth="610.0">
          <children>
-            <Label alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: c7a270;" text="   " underline="true">
+            <Label fx:id="char1" alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: c7a270;" text="   " underline="true">
                <font>
                   <Font size="36.0" />
                </font>
@@ -21,7 +20,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </Label>
-            <Label alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: c7a270;" text="   " underline="true">
+            <Label fx:id="char2" alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: c7a270;" text="   " underline="true">
                <font>
                   <Font size="36.0" />
                </font>
@@ -29,7 +28,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </Label>
-            <Label alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: c7a270;" text="   " underline="true">
+            <Label fx:id="char3" alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: c7a270;" text="   " underline="true">
                <font>
                   <Font size="36.0" />
                </font>
@@ -37,7 +36,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </Label>
-            <Label alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: c7a270;" text="   " underline="true">
+            <Label fx:id="char4" alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: c7a270;" text="   " underline="true">
                <font>
                   <Font size="36.0" />
                </font>
@@ -47,18 +46,28 @@
             </Label>
          </children>
       </HBox>
-      <TextField layoutX="271.0" layoutY="217.0" />
-      <Label layoutX="117.0" layoutY="27.0" text="Please Enter your Guess Below">
+      <TextField fx:id="charGuess" layoutX="271.0" layoutY="217.0" />
+      <Label fx:id="text1" layoutX="117.0" layoutY="27.0" text="Please Enter your Guess Below">
          <font>
             <Font name="Cochin" size="36.0" />
          </font>
       </Label>
-      <Button layoutX="301.0" layoutY="268.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: c7a270; -fx-border-color: Black;" text="GUESS">
+      <Button fx:id="guess" layoutX="301.0" layoutY="268.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: c7a270; -fx-border-color: Black;" text="GUESS">
          <font>
             <Font name="Cochin" size="18.0" />
          </font>
       </Button>
-      <Label layoutX="59.0" layoutY="368.0" prefHeight="40.0" prefWidth="600.0" text="Letters Guessed:">
+      <Label fx:id="letGuess" layoutX="59.0" layoutY="357.0" prefHeight="40.0" prefWidth="600.0" text="Letters Guessed:">
+         <font>
+            <Font name="Cochin" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="tries" layoutX="59.0" layoutY="397.0" prefHeight="40.0" prefWidth="600.0" text="Remaining Guesses:">
+         <font>
+            <Font name="Cochin" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="437.0" prefHeight="40.0" prefWidth="600.0" text="Word Attempts:">
          <font>
             <Font name="Cochin" size="24.0" />
          </font>

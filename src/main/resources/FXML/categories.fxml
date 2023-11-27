@@ -5,34 +5,34 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: EEE8AA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: EEE8AA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CategoryController">
    <children>
-      <Label layoutX="229.0" layoutY="23.0" text="CATEGORIES">
+      <Label fx:id="catLab" layoutX="229.0" layoutY="23.0" text="CATEGORIES">
          <font>
             <Font name="Cochin" size="36.0" />
          </font>
       </Label>
-      <Button layoutX="29.0" layoutY="75.0" mnemonicParsing="false" prefHeight="350.0" prefWidth="200.0" style="-fx-background-color: D2B48c;" text="ANIMALS">
+      <Button fx:id="category1" layoutX="29.0" layoutY="75.0" mnemonicParsing="false" prefHeight="350.0" prefWidth="200.0" style="-fx-background-color: D2B48c;" text="ANIMALS">
          <font>
             <Font name="Chalkboard SE Regular" size="24.0" />
          </font>
       </Button>
-      <Button layoutX="252.0" layoutY="75.0" mnemonicParsing="false" prefHeight="350.0" prefWidth="200.0" style="-fx-background-color: D2B48c;" text="FOOD">
+      <Button fx:id="category2" layoutX="252.0" layoutY="75.0" mnemonicParsing="false" prefHeight="350.0" prefWidth="200.0" style="-fx-background-color: D2B48c;" text="FOOD">
          <font>
             <Font name="Chalkboard SE Bold" size="24.0" />
          </font>
       </Button>
-      <Button layoutX="472.0" layoutY="75.0" mnemonicParsing="false" prefHeight="350.0" prefWidth="200.0" style="-fx-background-color: D2B48c;" text="U.S. STATES">
+      <Button fx:id="category3" layoutX="472.0" layoutY="75.0" mnemonicParsing="false" prefHeight="350.0" prefWidth="200.0" style="-fx-background-color: D2B48c;" text="U.S. STATES">
          <font>
             <Font name="Chalkboard SE Regular" size="24.0" />
          </font>
       </Button>
-      <Label layoutX="171.0" layoutY="433.0" text="Please select a category to continue">
+      <Label fx:id="text1" layoutX="171.0" layoutY="433.0" text="Please select a category to continue">
          <font>
             <Font name="Cochin" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="98.0" layoutY="461.0" text="Once selected you have three tries in each category">
+      <Label fx:id="text2" layoutX="98.0" layoutY="461.0" text="Once selected you have three tries in each category">
          <font>
             <Font name="Cochin" size="24.0" />
          </font>
