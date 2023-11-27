@@ -75,7 +75,6 @@ public class ScenarioController {
         char3.setText(String.valueOf(guessedWord.charAt(2)));
         char4.setText(String.valueOf(guessedWord.charAt(3)));
 
-        attempts.setText("Word Attempts: " + wordGuesses);
         tries.setText("Remaining Guesses: " + charGuesses);
     }
 
