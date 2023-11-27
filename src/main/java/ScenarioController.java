@@ -41,5 +41,42 @@ public class ScenarioController {
     public void setPrimaryStage(Stage primaryStage) {
         this.primaryStage = primaryStage;
     }
+    private String word = "Java";
+    private StringBuilder guessedWord = new StringBuilder("    ");
+
+    public void initialize(){
+        updateLabels();
+        guess.setOnAction(e ->{
+            guessButtonClicked();
+        });
+    }
+    private void guessButtonClicked() {
+        String guess = charGuess.getText().toUpperCase(); // Convert to uppercase for case-insensitivity
+
+        if (guess.length() == 1 && Character.isLetter(guess.charAt(0))) {
+            updateGuessedWord(guess.charAt(0));
+            updateLabels();
+        }else{
+            charGuesses = charGuesses - 1;
+        }
+        updateLabels();
+        charGuess.clear();
+    }
+    private void updateGuessedWord(char guess) {
+        for (int i = 0; i < word.length(); i++) {
+            if (Character.toUpperCase(word.charAt(i)) == Character.toUpperCase(guess)) {
+                guessedWord.setCharAt(i, guess);
+            }
+        }
+    }
+    private void updateLabels() {
+        char1.setText(String.valueOf(guessedWord.charAt(0)));
+        char2.setText(String.valueOf(guessedWord.charAt(1)));
+        char3.setText(String.valueOf(guessedWord.charAt(2)));
+        char4.setText(String.valueOf(guessedWord.charAt(3)));
+
+        attempts.setText("Word Attempts: " + wordGuesses);
+        tries.setText("Remaining Guesses: " + charGuesses);
+    }
 
 }
