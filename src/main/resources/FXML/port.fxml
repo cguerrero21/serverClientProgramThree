@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: EEE8AA;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PortController">
+   <children>
+      <TextField fx:id="portTF" alignment="CENTER" layoutX="185.0" layoutY="205.0" prefHeight="26.0" prefWidth="300.0" promptText="Port" />
+      <Button fx:id="accept" alignment="CENTER" layoutX="279.0" layoutY="256.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="112.0" style="-fx-background-color: D2B48C;" text="ACCEPT" textAlignment="CENTER">
+         <font>
+            <Font name="Big Caslon Medium" size="13.0" />
+         </font>
+      </Button>
+      <Label fx:id="instruction" alignment="CENTER" layoutX="178.0" layoutY="123.0" prefHeight="75.0" prefWidth="315.0" text="Please enter your port number " textAlignment="CENTER">
+         <font>
+            <Font name="Big Caslon Medium" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

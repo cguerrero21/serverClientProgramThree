@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: EEE8AA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" layoutX="235.0" layoutY="35.0" prefHeight="51.0" prefWidth="231.0" text="RULES">
+         <font>
+            <Font name="Comic Sans MS" size="36.0" />
+         </font>
+      </Label>
+      <Button layoutX="272.0" layoutY="364.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="156.0" style="-fx-background-color: D2B48c;" text="ACCEPT">
+         <font>
+            <Font name="Cochin" size="20.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="58.0" layoutY="100.0" text="Welcome to our word guessing game. The rules are fairly simple">
+         <font>
+            <Font name="Cochin" size="22.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="61.0" layoutY="127.0" text="To win you have to guess words from three different categories.">
+         <font>
+            <Font name="Cochin" size="22.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="31.0" layoutY="154.0" text="Within each category you have a total of three attempts to guess a word.">
+         <font>
+            <Font name="Cochin" size="22.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="181.0" text="If you do not guess a word in the category in three attempts its Game Over!">
+         <font>
+            <Font name="Cochin" size="22.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="61.0" layoutY="208.0" text="Within each word you have a total of 6 guesses before you fail.">
+         <font>
+            <Font name="Cochin" size="22.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="102.0" layoutY="237.0" text="Correct guesses do not count towards your 6 guesses.">
+         <font>
+            <Font name="Cochin" size="22.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="65.0" layoutY="264.0" text="To win you need to correctly guess one word in each category!">
+         <font>
+            <Font name="Cochin" size="22.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="180.0" layoutY="291.0" text="GOOD LUCK AND HAVE FUN!">
+         <font>
+            <Font name="Cochin" size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -18,115 +18,24 @@ import java.util.function.Consumer;
 
 public class ClientGUI extends Application {
 
-    private Label messageLabel = new Label("Messages will appear here");
-    private TextField portTF = new TextField();
-    private Scene rules;
-    private Scene cats;
-    Button accept = new Button("Accept");
-    Button category1 = new Button("FOOD");
-    Button category2 = new Button("ANIMALS");
-    Button category3 = new Button("U.S. States");
-    public void start(Stage primaryStage) {
-        Label label = new Label("Please insert your port number");
-        BorderPane root = new BorderPane();
-        VBox topTab = new VBox();
+        private Label messageLabel = new Label("Messages will appear here");
+        private TextField portTF = new TextField();
 
-        createRules();
-        createCategory();
+        public void start(Stage primaryStage) {
 
-        Button startButton = new Button("Start Client");
-        startButton.setOnAction(e -> {
-            if (portTF.getText().isEmpty()) {
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Warning");
-                alert.setHeaderText(null);
-                alert.setContentText("Please enter port in textfield.");
-                alert.showAndWait();
-            }else {
-                startClient();
-                startButton.setDisable(true);
-                primaryStage.setScene(rules);
-            }
-        });
-        accept.setOnAction(e -> {
-            primaryStage.setScene(cats);
-        });
-        topTab.getChildren().addAll(label, portTF, startButton);
-        topTab.setAlignment(Pos.CENTER);
-        root.setCenter(topTab);
+        }
 
-        root.setStyle("-fx-background-color: #EEE8AA");
-        primaryStage.setScene(new Scene(root, 700, 500));
-        primaryStage.setTitle("Client GUI");
-        primaryStage.show();
-    }
+        private void startClient() {
+            int port = Integer.parseInt(portTF.getText());
+            Consumer<Serializable> uiUpdater = message -> updateUI(message.toString());
+            Client clientThread = new Client(port, uiUpdater);
+            clientThread.start();
+        }
 
-    private void startClient() {
-        int port = Integer.parseInt(portTF.getText());
-        Consumer<Serializable> uiUpdater = message -> updateUI(message.toString());
-        Client clientThread = new Client(port, uiUpdater);
-        clientThread.start();
-    }
-
-    public void updateUI(String message) {
-        messageLabel.setText(message);
-    }
-    public static void main(String[] args) {
-        launch(args);
-    }
-
-    private void createCategory(){
-        BorderPane catRoot = new BorderPane();
-        catRoot.setStyle("-fx-background-color: #EEE8AA");
-
-        HBox buttonHolder = new HBox();
-        buttonHolder.setAlignment(Pos.CENTER);
-        Label buffer = new Label("");
-        Label catLab = new Label("CATEGORIES");
-        catLab.setFont(Font.font("Arial", FontWeight.BOLD, 30));
-
-        VBox buff = new VBox();
-        StackPane labelHold = new StackPane();
-        labelHold.getChildren().add(catLab);
-        labelHold.setAlignment(Pos.CENTER);
-        buff.getChildren().addAll(buffer,labelHold);
-
-        category1.setPrefSize(200, 350);
-        category2.setPrefSize(200, 350);
-        category3.setPrefSize(200, 350);
-        buttonHolder.getChildren().addAll(category1, category2, category3);
-
-        StackPane botText = new StackPane();
-        Label text = new Label("Please select a category");
-        botText.getChildren().add(text);
-        botText.setAlignment(Pos.CENTER);
-        text.setFont(Font.font("Arial", FontWeight.BOLD, 25));
-
-        catRoot.setTop(buff);
-        catRoot.setCenter(buttonHolder);
-        catRoot.setBottom(botText);
-        cats = new Scene(catRoot, 700, 500);
-    }
-    private void createRules(){
-        BorderPane rulesRoot = new BorderPane();
-        VBox holder = new VBox();
-        accept.setPrefSize(150, 50);
-        Label header = new Label("RULES");
-        header.setFont(new Font(40));
-        Label rules1 = new Label("Welcome to our word guessing game.\nThe rules are fairly simple.\n" +
-                "To win you have to guess words from three different categories.\n " +
-                "Within each category you have a total of three attempts to guess a word.\n" +
-                "If you do not guess a word in the category in three attempts its Game Over!\n" +
-                "Within each word you have a total of 6 guesses before you fail.\n " +
-                "Correct guesses do not count towards your 6 guesses.\n" +
-                "To win you need to correctly guess one word in each category!\n" +
-                "GOOD LUCK AND HAVE FUN!");
-        rules1.setFont(new Font(20));
-        rules1.setAlignment(Pos.CENTER);
-        holder.setAlignment(Pos.CENTER);
-        holder.getChildren().addAll(header, rules1, accept);
-        rulesRoot.setCenter(holder);
-        rulesRoot.setStyle("-fx-background-color: #EEE8AA");
-        rules = new Scene(rulesRoot, 700, 500);
-    }
+        public void updateUI(String message) {
+            messageLabel.setText(message);
+        }
+        public static void main(String[] args) {
+            launch(args);
+        }
 }
