@@ -35,6 +35,9 @@ public class ScenarioController {
     @FXML
     private Label tries;
     private Stage primaryStage;
+
+    int wordGuesses = 3;
+    int charGuesses = 6;
     public void setPrimaryStage(Stage primaryStage) {
         this.primaryStage = primaryStage;
     }

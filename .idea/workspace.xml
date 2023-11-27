@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d86530ed-a27c-428b-8f4e-d5c595485427" name="Changes" comment="Seventh commit (FXML)">
+    <list default="true" id="d86530ed-a27c-428b-8f4e-d5c595485427" name="Changes" comment="Ninth commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PortController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PortController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RulesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RulesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ScenarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ScenarioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/GameScenario.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GameScenario.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/categories.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/categories.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/rules.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/rules.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +74,7 @@
       <workItem from="1700348777057" duration="1008000" />
       <workItem from="1700595564979" duration="3452000" />
       <workItem from="1700692571394" duration="4410000" />
-      <workItem from="1700782467323" duration="32128000" />
+      <workItem from="1700782467323" duration="34949000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -137,7 +132,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701045526551</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Eigth commit">
+      <option name="closed" value="true" />
+      <created>1701052783444</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701052783444</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Ninth commit">
+      <option name="closed" value="true" />
+      <created>1701054333168</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701054333168</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +173,9 @@
     <MESSAGE value="Fifth commit" />
     <MESSAGE value="Sixth commit" />
     <MESSAGE value="Seventh commit (FXML)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Seventh commit (FXML)" />
+    <MESSAGE value="Eigth commit" />
+    <MESSAGE value="Ninth commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ninth commit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

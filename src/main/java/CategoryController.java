@@ -38,6 +38,12 @@ public class CategoryController {
         category1.setOnAction(e ->{
             showNextScene();
         });
+        category2.setOnAction(e ->{
+            showNextScene();
+        });
+        category3.setOnAction(e ->{
+            showNextScene();
+        });
     }
 
     private void showNextScene() {
